@@ -1,0 +1,238 @@
+/* Color Palette Variables */
+:root {
+    --bg-pastel-white: #F9F8F3;
+    --card-white: #FFFFFF;
+    --dark-blue: #0053d7;
+    --light-blue: #6e7b93;
+    --light-gray: #a7a7a7;
+    --dark-gray: #707070;
+    --black: #000000;
+    --medyo-blue: #3a474f;
+    
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-pastel-white);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 40px 20px;
+}
+
+/* Layout Containers */
+.cv-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Left col is twice as wide as right col */
+    gap: 25px;
+}
+
+/* Shared Card Styles */
+.card {
+    background-color: var(--card-white);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.content-box {
+    padding: 30px;
+    margin-bottom: 25px; /* Spaces out stacked cards */
+}
+
+.highlighted-box {
+    background: linear-gradient(135deg, var(--card-white) 0%, var(--light-gray) 100%);
+    border-left: 5px solid var(--light-gray);
+}
+
+/* Header Banner Styles */
+.header-card {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right, var(--card-white) 60%, var(--light-gray) 100%);
+}
+
+.profile-top {
+    display: flex;
+    align-items: center;
+    padding: 30px 40px;
+    gap: 30px;
+}
+
+.avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 4px solid var(--light-gray);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.name-highlight {
+    color: var(--black);
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: var(--light-blue);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.contact-ribbon {
+    background-color: var(--light-blue);
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 20px;
+    color: var(--bg-pastel-white);
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.contact-item {
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-ribbon .icon-green {
+    color: var(--bg-pastel-white);
+}
+
+/* Typography & Elements */
+.icon-green {
+    color: var(--dark-gray);
+}
+
+.section-title {
+    color: var(--medyo-blue);
+    font-size: 1.4rem;
+    border-bottom: 2px dashed var(--medyo-blue);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.section-title i {
+    color: var(--medyo-blue);
+    margin-right: 10px;
+}
+
+.body-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    text-align: justify;
+}
+
+/* Timeline/Experience Styling */
+.timeline-item {
+    margin-bottom: 20px;
+}
+
+.role-title {
+    color: var(--black);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.date-location {
+    color: var(--dark-gray);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 5px 0 10px 0;
+}
+
+.tag {
+    background-color: var(--dark-gray);
+    color: var(--bg-pastel-white);
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    margin-left: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.inner-divider {
+    border: none;
+    height: 1px;
+    background-color: var(--medyo-blue);
+    margin: 20px 0;
+}
+
+/* Skills Progress Bars */
+.skill-item {
+    margin-bottom: 18px;
+}
+
+.skill-item p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--medyo-blue);
+}
+
+.progress-bg {
+    background-color: var(--bg-pastel-white);
+    border-radius: 10px;
+    height: 16px;
+    width: 100%;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.progress-bar {
+    background-color: var(--light-gray);
+    height: 100%;
+    border-radius: 10px;
+    color: var(--black);
+    font-size: 0.7rem;
+    text-align: right;
+    padding-right: 10px;
+    line-height: 16px;
+    font-weight: bold;
+}
+
+/* Lists */
+.custom-list {
+    list-style-type: none;
+}
+
+.custom-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--medyo-blue);
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.custom-list li:last-child {
+    border-bottom: none;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 850px) {
+    .main-grid {
+        grid-template-columns: 1fr; /* Stacks the columns on mobile */
+    }
+    .profile-top {
+        flex-direction: column;
+        text-align: center;
+    }
+}
